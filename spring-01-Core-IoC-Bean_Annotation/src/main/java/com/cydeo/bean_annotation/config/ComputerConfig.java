@@ -15,12 +15,17 @@ import org.springframework.context.annotation.Primary;
 @Configuration
 public class ComputerConfig {
 
-    @Bean
+    @Bean (name = "sony")
     public Monitor monitorSony() {
         return new SonyMonitor("25 inch Beast", "Sony", 25);
     }
+
     @Bean
     @Primary
+    public Monitor monitorSony2() {
+        return new SonyMonitor("30 inch Beast", "Sony", 30);
+    }
+    @Bean (name = "acer")
     public Monitor monitorAcer(){
         return new AcerMonitor("23 inch Beast","Acer", 23);
     }
