@@ -2,9 +2,11 @@ package com.cydeo.streotype_annotation.monitorfactory;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
+@ToString
 public abstract class Monitor {
 
     private String model;
