@@ -28,6 +28,42 @@
     <a th:href="@{/student/welcome(id=3)}">Link</a>
 </h2>
 
+<h2>
+    <a th:href="@{/student/welcome(name=${students.get(0).firstName})}">Link2</a>
+</h2>
+
+<!--Iteration-->
+<h2>Printing Students First Name</h2>
+<ul>
+    <li th:each=" eachStudent : ${students}" th:text="${eachStudent.firstName}"></li>
+</ul>
+<h2>Printing Students last Name</h2>
+<ul>
+    <li th:each=" eachStudent : ${students}" th:text="${eachStudent.lastName}"></li>
+</ul>
+<h2>Printing Students in Table</h2>
+<table>
+    <thead>
+    <tr>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Age</td>
+        <td>State</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="eachStudent : ${students}">
+        <td  th:text="${eachStudent.firstName}"></td>
+        <td  th:text="${eachStudent.lastName}"></td>
+        <td  th:text="${eachStudent.age}"></td>
+        <td  th:text="${eachStudent.state}"></td>
+    </tr>
+
+
+    </tbody>
+</table>
+
+
 
 
 </body>
