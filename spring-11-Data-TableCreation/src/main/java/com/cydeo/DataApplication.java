@@ -1,13 +1,13 @@
-package com.cydeo.spring11datatablecreation;
+package com.cydeo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Spring11DataTableCreationApplication {
+public class DataApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Spring11DataTableCreationApplication.class, args);
+        SpringApplication.run(DataApplication.class, args);
     }
 
 }
