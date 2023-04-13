@@ -22,4 +22,7 @@ public class Cart {
             inverseJoinColumns = @JoinColumn(name= "i_id")
     )
     private List<Item> itemList;
+
+    @OneToOne(mappedBy = "cart")
+    private Payment payment;
 }
