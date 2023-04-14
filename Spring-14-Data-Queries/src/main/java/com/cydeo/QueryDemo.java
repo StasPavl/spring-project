@@ -1,6 +1,7 @@
 package com.cydeo;
 
 import com.cydeo.repository.DepartmentRepository;
+import com.cydeo.repository.EmployeeRepository;
 import com.cydeo.repository.RegionRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -9,10 +10,12 @@ import org.springframework.stereotype.Component;
 public class QueryDemo implements CommandLineRunner {
     private final RegionRepository regionRepository;
     private final DepartmentRepository departmentRepository;
+    private final EmployeeRepository employeeRepository;
 
-    public QueryDemo(RegionRepository regionRepository, DepartmentRepository departmentRepository) {
+    public QueryDemo(RegionRepository regionRepository, DepartmentRepository departmentRepository, EmployeeRepository employeeRepository) {
         this.regionRepository = regionRepository;
         this.departmentRepository = departmentRepository;
+        this.employeeRepository = employeeRepository;
     }
 
     @Override
@@ -32,5 +35,10 @@ public class QueryDemo implements CommandLineRunner {
         System.out.println("Find by division" + departmentRepository.findByDivision("Health"));
         System.out.println("find division end with ICS" + departmentRepository.findByDivisionEndingWith("ics"));
         System.out.println("contains HEA" + departmentRepository.findDistinctTop3ByDivisionContaining("Hea"));
+
+        System.out.println("----------EMPLOYEE------------");
+        System.out.println("find employee by email" + employeeRepository.findByEmail("amcnee1@google.es"));
+        System.out.println("find employee detail" + employeeRepository.retrieveEmployeeDetail());
+        System.out.println("salary of employee " + employeeRepository.retrieveEmployeeSalary());
     }
 }
